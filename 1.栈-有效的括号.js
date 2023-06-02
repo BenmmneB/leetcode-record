@@ -19,3 +19,18 @@ var isValid = function(s) {
     return stack.length == 0//真
 };
 //2.成对替换
+var isValid = function(s) {
+    let len = s.length
+    //不为偶数直接false
+    if(len % 2 != 0){
+        return false
+    }
+    let length = len / 2//可以直接判断一半
+    for(let i = 0;i < length;i++){
+        s = s.replace('()','')
+        s = s.replace('{}','')
+        s = s.replace('[]','')
+    }
+    return s.length == 0
+
+};
